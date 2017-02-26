@@ -1,10 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Random Quite Machine</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- load MUI -->
+  <link href="//cdn.muicss.com/mui-0.9.9/css/mui.min.css" rel="stylesheet" type="text/css" />
+  <script src="//cdn.muicss.com/mui-0.9.9/js/mui.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.js"></script>
+
+  <!--Need some API to parse bug chunk of html-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.js"></script>
+
+  <!--es6 promise pollyfill-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.0.5/es6-promise.js"></script>
+
+
+  <!--jsonp for fetch like api-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch-jsonp/1.0.5/fetch-jsonp.min.js"></script>
+
+  <!-- Vue -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
+
+  <style>
+    /**
+     * Body CSS
+     */
+    html,
+    body {
+      height: 100%;
+    }
+    html,
+    body,
+    input,
+    textarea,
+    button {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+    }
+    /**
+     * Header CSS
+     */
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 2;
+    }
+    header ul.mui-list--inline {
+      margin-bottom: 0;
+    }
+    header a {
+      color: white;
+    }
+    /**
+     * Content CSS
+     */
+    #content-wrapper {
+      box-sizing: border-box;
+      min-height: 100%;
+      margin-bottom: -80px;
+      padding-bottom: 80px;
+    }
+    /**
+     * Footer CSS
+     */
+    footer {
+      box-sizing: border-box;
+      height: 80px;
+      background-color: #eee;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 15px;
+    }
+  </style>
 </head>
 <body>
+<header class="mui-appbar mui--z1">
+  <div class="mui-container">
+    <table width="100%">
+      <tr class="mui--appbar-height">
+        <td class="mui--text-title">Random Quote Machine</td>
+      </tr>
+    </table>
+  </div>
+</header>
+<div id="content-wrapper" class="mui--text-center">
+  <div class="mui--appbar-height"></div>
+  <br>
+  <br>
+  <div class="mui-container-fluid">
+     <div class="mui-row">
+       <div class="mui-col-sm-6 mui-col-sm-offset-3 js-quotes-machina">
+         <div class="mui-panel">
+           <div class="mui--text-center">{{ quote }}</div>
+           <br/>
+           <div class="mui-divider"></div>
+           <br/>
+           <div class="mui--text-right"><a :href="pageUrl">{{ title }}</a></div>
+         </div>
+
+         <button class="mui-btn mui-btn--raised" @click="nextQuote">Next</button>
+       </div>
+     </div>
+  </div>
+</div>
+<footer>
+  <div class="mui-container mui--text-center mui--text-bottom">
+    Made with ♥ by <a href="https://www.example.com">nesterone</a>
+  </div>
+</footer>
+
+<script src="quote-machine.js"></script>
 
 </body>
 </html>
