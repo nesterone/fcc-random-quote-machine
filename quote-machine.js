@@ -16,7 +16,8 @@ function getRandomQuote() {
         "George Bernard Shaw",
         "John Lennon",
         "Confucius",
-        "Seneca the Younger"
+        "Seneca the Younger",
+        "Winston Churchill"
     ];
 
     function generateRandomIndex(length) {
